@@ -1,0 +1,78 @@
+function addDoor() {
+    var numDoors = document.getElementById("numDoors").value;
+    var doorInputs = document.getElementById("doorInputs");
+
+    doorInputs.innerHTML = '';
+
+    for (var i = 1; i <= numDoors; i++) {
+        var doorContainer = document.createElement("div");
+        doorContainer.className = "measurements-container";
+
+        var doorLabel = document.createElement("label");
+        doorLabel.innerHTML = "Misure Porta " + i + ":";
+
+        var doorWidthInput = document.createElement("input");
+        doorWidthInput.type = "text";
+        doorWidthInput.name = "doorWidth" + i;
+        doorWidthInput.placeholder = "Larghezza Porta " + i;
+        doorWidthInput.required = true;
+
+        var doorHeightInput = document.createElement("input");
+        doorHeightInput.type = "text";
+        doorHeightInput.name = "doorHeight" + i;
+        doorHeightInput.placeholder = "Altezza Porta " + i;
+        doorHeightInput.required = true;
+
+        doorContainer.appendChild(doorLabel);
+        doorContainer.appendChild(doorWidthInput);
+        doorContainer.appendChild(doorHeightInput);
+
+        doorInputs.appendChild(doorContainer);
+    }
+}
+
+function addWindow() {
+    var numWindows = document.getElementById("numWindows").value;
+    var windowInputs = document.getElementById("windowInputs");
+
+    windowInputs.innerHTML = '';
+
+    for (var i = 1; i <= numWindows; i++) {
+        var windowContainer = document.createElement("div");
+        windowContainer.className = "measurements-container";
+
+        var windowLabel = document.createElement("label");
+        windowLabel.innerHTML = "Misure Infisso " + i + ":";
+
+        var windowWidthInput = document.createElement("input");
+        windowWidthInput.type = "text";
+        windowWidthInput.name = "windowWidth" + i;
+        windowWidthInput.placeholder = "Larghezza Infisso " + i;
+        windowWidthInput.required = true;
+
+        var windowHeightInput = document.createElement("input");
+        windowHeightInput.type = "text";
+        windowHeightInput.name = "windowHeight" + i;
+        windowHeightInput.placeholder = "Altezza Infisso " + i;
+        windowHeightInput.required = true;
+
+        windowContainer.appendChild(windowLabel);
+        windowContainer.appendChild(windowWidthInput);
+        windowContainer.appendChild(windowHeightInput);
+
+        windowInputs.appendChild(windowContainer);
+    }
+}
+
+function submitForm() {
+    var form = document.getElementById("quoteForm");
+    var formData = new FormData(form);
+
+    // Simulazione di un invio di dati
+    for (var pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+    }
+
+    // Aggiungi qui la tua logica di invio dati tramite fetch o altro
+    // ...
+}

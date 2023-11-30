@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiesta Preventivo - Infissi & Porte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="form-container">
+    <h1>Richiesta Preventivo - Infissi & Porte</h1>
+
+    <!-- Sezione Porte -->
+    <section>
+        <h2>Misure Porte</h2>
+        <form id="doorForm">
+            <label for="numDoors">Numero di Porte:</label>
+            <input type="number" id="numDoors" name="numDoors" min="1" required>
+
+            <div id="doorInputs" class="measurements-container"></div>
+
+            <button type="button" onclick="addDoor()">Aggiungi Porta</button>
+        </form>
+    </section>
+
+    <!-- Sezione Infissi -->
+    <section>
+        <h2>Misure Infissi</h2>
+        <form id="windowForm">
+            <label for="numWindows">Numero di Infissi:</label>
+            <input type="number" id="numWindows" name="numWindows" min="1" required>
+
+            <div id="windowInputs" class="measurements-container"></div>
+
+            <button type="button" onclick="addWindow()">Aggiungi Infisso</button>
+        </form>
+    </section>
+
+    <!-- Sezione Generale -->
+    <section>
+        <h2>Dati Generali</h2>
+        <form id="quoteForm">
+            <label for="fullName">Nome e Cognome:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Inserisci Nome e Cognome" required>
+
+            <label for="destination">Destinazione Prodotti:</label>
+            <input type="text" id="destination" name="destination" placeholder="Inserisci Destinazione Prodotti" required>
+
+            <label for="quoteDate">Data:</label>
+            <input type="date" id="quoteDate" name="quoteDate" required>
+        </form>
+    </section>
+
+    <button type="button" onclick="submitForm()">Invia Richiesta</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
